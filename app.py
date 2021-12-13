@@ -7,6 +7,22 @@ from API import get_prediction
 
 app = FastAPI()
 
+# ------------------------------------------
+
+# Enabling CORS policy
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# ------------------------------------------
+
 model_path = r"Malicious_URL_Prediction.h5"
 
 # passing variables to ML model to return prediction
