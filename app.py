@@ -4,6 +4,7 @@ import uvicorn
 from fastapi import FastAPI
 from UrlData import UrlData
 from API import get_prediction
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
