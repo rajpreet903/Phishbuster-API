@@ -5,4 +5,4 @@
 </div>
 
 
-The Rest API for Phishr - A Cybersecurity utility for detecting malicious Urls
+A Heroku Rest API for Phishr - A Cybersecurity utility for detecting malicious Urls
