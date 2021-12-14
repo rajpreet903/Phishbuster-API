@@ -1,4 +1,4 @@
-# Phishr-API
+# Phishr Rest-API
 
 <div align="center">
 <Img src="/Phishr.png"/>
@@ -6,3 +6,5 @@
 
 
 A Heroku Rest API for 'Phishr' - A Cybersecurity utility for detecting malicious Urls
+
+Checkout the documentation [here](phishhr.herokuapp.com/docs) .
