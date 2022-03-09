@@ -1,6 +1,7 @@
 from urllib.parse import urlparse
 from tensorflow import keras
 import re
+import numpy as np
 
 
 # First Directory Length
@@ -115,6 +116,15 @@ def get_features(url):
 # This function takes the url and returns probability value
 
 def get_prediction(url, model_path):
+
+    # ---------------------------------
+    # Check if the URL is one of the known sites.
+
+    known_sites = np.load("known_sites.npy")
+    if url in known_sites:
+        return 0.05
+    #---------------------------------
+
     print("Loading the model...")
     model = keras.models.load_model(model_path)
 
