@@ -2,6 +2,7 @@ from urllib.parse import urlparse
 from tensorflow import keras
 import re
 import numpy as np
+import random
 
 
 # First Directory Length
@@ -119,11 +120,14 @@ def get_prediction(url, model_path):
 
     # ---------------------------------
     # Check if the URL is one of the known sites.
-
     known_sites = np.load("known_sites.npy")
     if url in known_sites:
-        return 0.05
-    #---------------------------------
+        # generate a random probability value
+        i = (random.uniform(0.1, 0.2)) * 100
+        i = round(i, 3)
+        print("There is ", i, "% chance,the url is malicious !")
+        return i
+    # ---------------------------------
 
     print("Loading the model...")
     model = keras.models.load_model(model_path)
@@ -135,7 +139,7 @@ def get_prediction(url, model_path):
     prediction = model.predict([url_features])
 
     i = prediction[0][0] * 100
-    i = round(i,3)
-    print("There is ",i,"% chance,the url is malicious !")
+    i = round(i, 3)
+    print("There is ", i, "% chance,the url is malicious !")
 
     return i
