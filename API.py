@@ -120,7 +120,7 @@ def get_prediction(url, model_path):
 
     # ---------------------------------
     # Check if the URL is one of the known sites.
-    known_sites = np.load("known_sites.npy")
+    known_sites = np.load("top_known_sites.npy",allow_pickle=True)
     if url in known_sites:
         # generate a random probability value
         i = (random.uniform(0.1, 0.2)) * 100
