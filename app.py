@@ -50,7 +50,9 @@ def predict(data: UrlData):
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+    
+    # changed 127.0.0.1 to 0.0.0.0 for railway.app deployment
 
     # you can go to "/docs" or "/redoc" endpoint to get the API documentation
 
