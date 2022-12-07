@@ -65,7 +65,7 @@ def predict(data: UrlData):
     # Wait until you get the below message in terminal :
     # "Application startup complete".
 
-
+# NOTE : On Railway app we provide the port as $PORT, the port is provided by railway cloud.
 
 
 
